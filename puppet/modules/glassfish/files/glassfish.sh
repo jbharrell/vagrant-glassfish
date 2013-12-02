@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#
+# glassfish init script for Linux
+# Simplest possible case -- no password file, one default domain
+# it would be simple to add such options
+
+GLASSFISH_HOME=${GLASSFISH_HOME:-"/opt/glassfishv3/glassfish"}
+
+case "$1" in
+start)
+    $GLASSFISH_HOME/bin/asadmin start-domain >/dev/null
+    ;;
+stop)
+    $GLASSFISH_HOME/bin/asadmin stop-domain >/dev/null
+    ;;
+restart)
+    $GLASSFISH_HOME/bin/asadmin restart-domain >/dev/null
+    ;;
+\*)
+    echo "usage: $0 (start|stop|restart|help)"
+esac
