@@ -1,0 +1,2 @@
+include baseimage
+include glassfish
